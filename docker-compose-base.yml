@@ -4,9 +4,9 @@ services:
     build: dockerfile/jenkins
     image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins
     container_name: jenkins
+    user: root
     environment:
       TZ: Asia/Shanghai
-    user: root
     volumes:
       - "./data/jenkins:/var/jenkins_home"
       - "./ubuntu.pem:/ubuntu.pem"
