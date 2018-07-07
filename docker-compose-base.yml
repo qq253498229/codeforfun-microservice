@@ -1,17 +1,5 @@
 version: "3"
 services:
-  nginx:
-    image: nginx:1.15.0
-    container_name: nginx
-    ports:
-      - 80:80
-    environment:
-      TZ: Asia/Shanghai
-    volumes:
-      - "./conf/nginx/nginx.conf:/etc/nginx/nginx.conf"
-      - "./conf/nginx/conf.d:/etc/nginx/conf.d"
-    networks:
-      - codeforfun-net
   jenkins:
     build: dockerfile/jenkins
     image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins
