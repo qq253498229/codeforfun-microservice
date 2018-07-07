@@ -12,6 +12,13 @@ services:
       - "./conf/nginx/conf.d:/etc/nginx/conf.d"
     networks:
       - codeforfun-net
+  webhooks:
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/webhooks
+    container_name: webhooks
+    environment:
+      TZ: Asia/Shanghai
+    networks:
+      - codeforfun-net
 networks:
   codeforfun-net:
     external:
