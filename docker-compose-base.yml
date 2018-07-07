@@ -15,6 +15,13 @@ services:
       - "${DOCKER_COMPOSE_PATH}:/usr/bin/docker-compose"
     networks:
       - codeforfun-net
+  webhooks:
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-webhooks
+    container_name: webhooks
+    environment:
+      TZ: Asia/Shanghai
+    networks:
+      - codeforfun-net
 networks:
   codeforfun-net:
     external:

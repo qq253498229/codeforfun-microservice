@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 cd /root/codeforfun-microservice
-docker-compose pull webhooks
-docker-compose rm -s -f webhooks
-docker-compose up -d webhooks
+docker-compose -f docker-compose-base.yml pull webhooks
+docker-compose -f docker-compose-base.yml rm -s -f webhooks
+docker-compose -f docker-compose-base.yml up -d webhooks

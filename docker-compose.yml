@@ -12,13 +12,6 @@ services:
       - "./conf/nginx/conf.d:/etc/nginx/conf.d"
     networks:
       - codeforfun-net
-  webhooks:
-    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-webhooks
-    container_name: webhooks
-    environment:
-      TZ: Asia/Shanghai
-    networks:
-      - codeforfun-net
   mysql:
     image: mysql:5.7
     container_name: mysql
