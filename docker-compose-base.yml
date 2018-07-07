@@ -13,7 +13,7 @@ services:
     networks:
       - codeforfun-net
   jenkins:
-    build: .
+    build: dockerfile/jenkins
     image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-jenkins
     container_name: jenkins
     environment:
