@@ -10,7 +10,9 @@ services:
     volumes:
       - "./data/jenkins:/var/jenkins_home"
       - "./ubuntu.pem:/ubuntu.pem"
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${DOCKER_PATH}:/usr/bin/docker"
+      - "${DOCKER_COMPOSE_PATH}:/usr/bin/docker-compose"
     networks:
       - codeforfun-net
 networks:
