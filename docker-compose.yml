@@ -19,6 +19,17 @@ services:
       TZ: Asia/Shanghai
     networks:
       - codeforfun-net
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - "./data/mysql:/var/lib/mysql"
+      - "./conf/mysql:/etc/mysql/conf.d"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Shanghai
+    networks:
+      - codeforfun-net
 networks:
   codeforfun-net:
     external:
