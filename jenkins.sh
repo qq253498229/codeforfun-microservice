@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 cd /root/codeforfun
-docker-compose rm -s -f jenkins
-docker-compose up -d jenkins
+docker-compose -f docker-compose-base.yml rm -s -f jenkins
+docker-compose -f docker-compose-base.yml up -d jenkins
