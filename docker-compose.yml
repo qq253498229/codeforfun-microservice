@@ -12,6 +12,13 @@ services:
       - "./conf/nginx/conf.d:/etc/nginx/conf.d"
     networks:
       - codeforfun-net
+  front-pc:
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-front-pc
+    container_name: front-pc
+    environment:
+      TZ: Asia/Shanghai
+    networks:
+      - codeforfun-net
   mysql:
     image: mysql:5.7
     container_name: mysql
