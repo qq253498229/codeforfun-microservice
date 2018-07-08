@@ -19,6 +19,13 @@ services:
       TZ: Asia/Shanghai
     networks:
       - codeforfun-net
+  eureka:
+    image: registry.cn-qingdao.aliyuncs.com/wangdali/codeforfun-eureka
+    container_name: eureka
+    environment:
+      TZ: Asia/Shanghai
+    networks:
+      - codeforfun-net
   mysql:
     image: mysql:5.7
     container_name: mysql
