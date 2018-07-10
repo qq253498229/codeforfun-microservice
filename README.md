@@ -1,5 +1,8 @@
 # codeforfun-MicroService
 
+[![GitHub forks](https://img.shields.io/github/forks/qq253498229/codeforfun-microservice.svg?style=social&label=Fork)](https://github.com/qq253498229/codeforfun-microservice/fork)
+[![GitHub stars](https://img.shields.io/github/stars/qq253498229/codeforfun-microservice.svg?style=social&label=Star)](https://github.com/qq253498229/codeforfun-microservice)
+
 #### 项目介绍
 
 
