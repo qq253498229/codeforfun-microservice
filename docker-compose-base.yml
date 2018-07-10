@@ -26,7 +26,7 @@ services:
     image: redmine:3.4
     container_name: redmine
     environment:
-      REDMINE_DB_MYSQL: mysql
+      REDMINE_DB_MYSQL: redmine
       REDMINE_DB_PASSWORD: root
       TZ: Asia/Shanghai
     networks:
