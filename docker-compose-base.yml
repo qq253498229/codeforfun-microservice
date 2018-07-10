@@ -27,7 +27,6 @@ services:
     container_name: redmine
     volumes:
       - "./data/redmine:/usr/src/redmine/files"
-      - "./conf/redmine/redmine_github_hook-2.2.0.zip:/usr/src/redmine/plugins/redmine_github_hook-2.2.0.zip"
     environment:
       REDMINE_DB_MYSQL: mysql
       REDMINE_DB_PASSWORD: root
