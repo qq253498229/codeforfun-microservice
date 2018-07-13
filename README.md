@@ -23,6 +23,7 @@ docker-compose up -d
 - [点击](https://github.com/qq253498229/codeforfun-docs) 查看设计文档
 - nginx/Shell/docker/jenkins整合请参考本模块
 - [点击](https://github.com/qq253498229/codeforfun-front-pc) 查看前端源码
+- [点击](https://github.com/qq253498229/codeforfun-oauth2.git) 查看认证中心源码
 
 
 
