@@ -53,6 +53,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 sysctl net.bridge.bridge-nf-call-iptables=1
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
 
+#enable pod in master
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
 #pull images about google for ingress
 docker pull registry.cn-qingdao.aliyuncs.com/wangdali/defaultbackend:1.4
 docker tag registry.cn-qingdao.aliyuncs.com/wangdali/defaultbackend:1.4 gcr.io/google_containers/defaultbackend:1.4
@@ -61,5 +64,4 @@ docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/defaultbackend:1.4
 #init ingress
 kubectl apply -f https://raw.githubusercontent.com/qq253498229/k8s/master/ingress/mandatory.yaml
 
-#enable pod in master
-kubectl taint nodes --all node-role.kubernetes.io/master-
+
