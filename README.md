@@ -35,9 +35,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-mic
 - [点击](https://github.com/qq253498229/codeforfun-front-pc) 查看前端源码
 - [点击](https://github.com/qq253498229/codeforfun-oauth2.git) 查看认证中心源码
 
+#### 参与贡献issues
 
+1.新建issues
 
-#### 参与贡献
+#### 参与贡献pull request
 
 1. Fork 本项目
 2. 新建 Feature_xxx 分支
