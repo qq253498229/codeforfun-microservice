@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #install base dependency
 apt-get update && apt-get install -y apt-transport-https
 
