@@ -10,10 +10,20 @@
 
 #### 安装教程
 
+准备安装
+
 ```bash
-git pull https://github.com/qq253498229/codeforfun-microservice.git
-cd codeforfun-microservice
-docker-compose up -d
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-microservice/master/shell/prepare.sh)"
+```
+
+安装docker
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-microservice/master/shell/install-docker.sh)"
+```
+
+安装k8s
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-microservice/master/shell/install-k8s.sh)"
 ```
 
 > 之后可以访问[http://localhost](http://localhost) 测试效果

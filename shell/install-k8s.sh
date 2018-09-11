@@ -25,9 +25,6 @@ done
 
 #初始化集群
 kubeadm init --kubernetes-version=v1.11.1 --pod-network-cidr 10.244.0.0/16
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 #安装网络组件
 sysctl net.bridge.bridge-nf-call-iptables=1
