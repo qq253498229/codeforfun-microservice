@@ -16,7 +16,7 @@ apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
 #defined images
-images=(kube-proxy-amd64:v1.11.1 kube-controller-manager-amd64:v1.11.1 kube-scheduler-amd64:v1.11.1 kube-apiserver-amd64:v1.11.1 coredns:1.1.3 etcd-amd64:3.2.18 pause:3.1)
+export images=(kube-proxy-amd64:v1.11.1 kube-controller-manager-amd64:v1.11.1 kube-scheduler-amd64:v1.11.1 kube-apiserver-amd64:v1.11.1 coredns:1.1.3 etcd-amd64:3.2.18 pause:3.1)
 #pull images about google for k8s
 for image in ${images[@]}; do
   docker pull registry.cn-qingdao.aliyuncs.com/wangdali/$image
@@ -26,6 +26,10 @@ done
 
 #init cluster
 kubeadm init --kubernetes-version=v1.11.1 --pod-network-cidr 10.244.0.0/16
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 #install network addon
 sysctl net.bridge.bridge-nf-call-iptables=1
