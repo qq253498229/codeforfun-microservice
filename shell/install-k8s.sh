@@ -15,15 +15,32 @@ apt-get update
 apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
-#defined images
-images=(kube-proxy-amd64:v1.11.1 kube-controller-manager-amd64:v1.11.1 kube-scheduler-amd64:v1.11.1 kube-apiserver-amd64:v1.11.1 coredns:1.1.3 etcd-amd64:3.2.18 pause:3.1)
-
 #pull images about google for k8s
-for image in ${images[@]}; do
-  docker pull registry.cn-qingdao.aliyuncs.com/wangdali/$image
-  docker tag registry.cn-qingdao.aliyuncs.com/wangdali/$image k8s.gcr.io/$image
-  docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/$image
-done
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/kube-proxy-amd64:v1.11.1
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/kube-controller-manager-amd64:v1.11.1
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/kube-scheduler-amd64:v1.11.1
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/kube-apiserver-amd64:v1.11.1
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/coredns:1.1.3
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/etcd-amd64:3.2.18
+docker pull registry.cn-qingdao.aliyuncs.com/wangdali/pause:3.1
+
+
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/kube-proxy-amd64:v1.11.1 k8s.gcr.io/kube-proxy-amd64:v1.11.1
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/kube-controller-manager-amd64:v1.11.1 k8s.gcr.io/kube-controller-manager-amd64:v1.11.1
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/kube-scheduler-amd64:v1.11.1 k8s.gcr.io/kube-scheduler-amd64:v1.11.1
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/kube-apiserver-amd64:v1.11.1 k8s.gcr.io/kube-apiserver-amd64:v1.11.1
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/coredns:1.1.3 k8s.gcr.io/coredns:1.1.3
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/etcd-amd64:3.2.18 k8s.gcr.io/etcd-amd64:3.2.18
+docker tag registry.cn-qingdao.aliyuncs.com/wangdali/pause:3.1 k8s.gcr.io/pause:3.1
+
+
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/kube-proxy-amd64:v1.11.1
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/kube-controller-manager-amd64:v1.11.1
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/kube-scheduler-amd64:v1.11.1
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/kube-apiserver-amd64:v1.11.1
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/coredns:1.1.3
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/etcd-amd64:3.2.18
+docker rmi registry.cn-qingdao.aliyuncs.com/wangdali/pause:3.1
 
 #init cluster
 kubeadm init --kubernetes-version=v1.11.1 --pod-network-cidr 10.244.0.0/16
