@@ -17,11 +17,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-mic
 ```
 
 安装docker
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-microservice/master/shell/install-docker.sh)"
 ```
 
 安装k8s
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/qq253498229/codeforfun-microservice/master/shell/install-k8s.sh)"
 ```
